@@ -20,21 +20,48 @@ jobs:
       - uses: actions/checkout@v2
       
       - uses: ddradar/choose-random-action@v1
-        id: pick
+        id: pick_diff
         with:
           contents: |
-            foo
-            bar
-            baz
+            352
+            554
+            724
+            767
+            865
+            867
+
+      - uses: ddradar/choose-random-action@v1
+        id: pick_easy1
+        with:
+          contents: |
+            257
+            354
+            397
+            485
+
+      - uses: ddradar/choose-random-action@v1
+        id: pick_easy2
+        with:
+          contents: |
+            687
+            889
+            932
+            979
       
-      - name: Create Issue From File
+      - name: Create Issue From File (Diff)
         uses: peter-evans/create-issue-from-file@v2.3.2
         with:
-          title: Nieuw ticket ${{ steps.pick.outputs.selected }}
-          content-filepath: ./README.md
-          
-      - name: Create Issue From File
+          title: Ticket nr. ${{ steps.pick_diff.outputs.selected }}
+          content-filepath: ./.issues/issue${{ steps.pick_diff.outputs.selected }}.md
+
+      - name: Create Issue From File (Easy1)
         uses: peter-evans/create-issue-from-file@v2.3.2
         with:
-          title: Nieuw ticket
-          content-filepath: ./issue.md
+          title: Ticket nr. ${{ steps.pick_easy1.outputs.selected }}
+          content-filepath: ./.issues/issue${{ steps.pick_easy1.outputs.selected }}.md
+
+      - name: Create Issue From File (Easy2)
+        uses: peter-evans/create-issue-from-file@v2.3.2
+        with:
+          title: Ticket nr. ${{ steps.pick_easy2.outputs.selected }}
+          content-filepath: ./.issues/issue${{ steps.pick_easy2.outputs.selected }}.md
