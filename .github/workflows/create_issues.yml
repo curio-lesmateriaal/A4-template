@@ -52,16 +52,16 @@ jobs:
         uses: peter-evans/create-issue-from-file@v2.3.2
         with:
           title: Ticket nr. ${{ steps.pick_diff.outputs.selected }}
-          content-filepath: ./.issues/issue${{ steps.pick_diff.outputs.selected }}.md
+          content-filepath: ./.issues/diff/issue${{ steps.pick_diff.outputs.selected }}.md
 
       - name: Create Issue From File (Easy1)
         uses: peter-evans/create-issue-from-file@v2.3.2
         with:
           title: Ticket nr. ${{ steps.pick_easy1.outputs.selected }}
-          content-filepath: ./.issues/issue${{ steps.pick_easy1.outputs.selected }}.md
+          content-filepath: ./.issues/easy/issue${{ steps.pick_easy1.outputs.selected }}.md
 
       - name: Create Issue From File (Easy2)
         uses: peter-evans/create-issue-from-file@v2.3.2
         with:
           title: Ticket nr. ${{ steps.pick_easy2.outputs.selected }}
-          content-filepath: ./.issues/issue${{ steps.pick_easy2.outputs.selected }}.md
+          content-filepath: ./.issues/easy/issue${{ steps.pick_easy2.outputs.selected }}.md
