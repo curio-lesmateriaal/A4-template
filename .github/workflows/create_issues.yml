@@ -53,15 +53,18 @@ jobs:
         with:
           title: Ticket nr. ${{ steps.pick_diff.outputs.selected }}
           content-filepath: ./.issues/diff/issue${{ steps.pick_diff.outputs.selected }}.md
+          labels: difficult
 
       - name: Create Issue From File (Med)
         uses: peter-evans/create-issue-from-file@v2.3.2
         with:
           title: Ticket nr. ${{ steps.pick_med.outputs.selected }}
           content-filepath: ./.issues/med/issue${{ steps.pick_med.outputs.selected }}.md
+          labels: medium
 
       - name: Create Issue From File (Easy)
         uses: peter-evans/create-issue-from-file@v2.3.2
         with:
           title: Ticket nr. ${{ steps.pick_easy.outputs.selected }}
           content-filepath: ./.issues/easy/issue${{ steps.pick_easy.outputs.selected }}.md
+          labels: easy
