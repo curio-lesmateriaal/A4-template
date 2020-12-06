@@ -23,26 +23,26 @@ jobs:
         id: pick_diff
         with:
           contents: |
-            352
             554
             724
             767
             865
-            867
 
       - uses: ddradar/choose-random-action@v1
-        id: pick_easy1
+        id: pick_med
         with:
           contents: |
             257
-            354
+            352
             397
-            485
+            867
 
       - uses: ddradar/choose-random-action@v1
-        id: pick_easy2
+        id: pick_easy
         with:
           contents: |
+            354
+            485
             687
             889
             932
@@ -54,14 +54,14 @@ jobs:
           title: Ticket nr. ${{ steps.pick_diff.outputs.selected }}
           content-filepath: ./.issues/diff/issue${{ steps.pick_diff.outputs.selected }}.md
 
-      - name: Create Issue From File (Easy1)
+      - name: Create Issue From File (Med)
         uses: peter-evans/create-issue-from-file@v2.3.2
         with:
-          title: Ticket nr. ${{ steps.pick_easy1.outputs.selected }}
-          content-filepath: ./.issues/easy/issue${{ steps.pick_easy1.outputs.selected }}.md
+          title: Ticket nr. ${{ steps.pick_med.outputs.selected }}
+          content-filepath: ./.issues/med/issue${{ steps.pick_med.outputs.selected }}.md
 
-      - name: Create Issue From File (Easy2)
+      - name: Create Issue From File (Easy)
         uses: peter-evans/create-issue-from-file@v2.3.2
         with:
-          title: Ticket nr. ${{ steps.pick_easy2.outputs.selected }}
-          content-filepath: ./.issues/easy/issue${{ steps.pick_easy2.outputs.selected }}.md
+          title: Ticket nr. ${{ steps.pick_easy.outputs.selected }}
+          content-filepath: ./.issues/easy/issue${{ steps.pick_easy.outputs.selected }}.md

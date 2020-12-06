@@ -1,9 +1,8 @@
 ## Ticket nr. 352
-Categorie: **difficult**
+Categorie: **medium**
 Inzender:	**Jelt Bontekoe**
 
 > De Facebook-link onderaan werkt niet.
-
 
 #### Stappenplan
 - [ ] Scroll naar de footer en check voor jezelf dat de link (het icoontje) inderdaad niet werkt.
