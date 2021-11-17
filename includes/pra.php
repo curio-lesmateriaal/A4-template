@@ -14,10 +14,10 @@
 			<h3>docenten</h3>
 			<div class="team">
 				<?php 
-				require ('collegas/wicher.php');
-				require ('collegas/bart.php');
+				require ('collegas/robin.php');
+				require ('collegas/corne.php');
 				require ('collegas/elton.php');
-				require ('collegas/mark.php');
+				require ('collegas/michel.php');
 				?>				
 			</div>
 		</div>

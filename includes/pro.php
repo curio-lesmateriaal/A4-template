@@ -18,9 +18,7 @@
 			<h3>docenten</h3>
 			<div class="team">
 				<?php 
-					require ('collegas/wicher.php');
-					require ('collegas/bart.php');
-  					require ('collegas/elton.php');
+					require ('collegas/steven.php');
   				?>
 			</div>
 		</div>
