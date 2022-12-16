@@ -17,9 +17,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.6.0
       
-      - uses: ddradar/choose-random-action@v1
+      - uses: ddradar/choose-random-action@v2.0.2
         id: pick_diff
         with:
           contents: |
@@ -28,7 +28,7 @@ jobs:
             767
             865
 
-      - uses: ddradar/choose-random-action@v1
+      - uses: ddradar/choose-random-action@v2.0.2
         id: pick_med
         with:
           contents: |
@@ -37,7 +37,7 @@ jobs:
             397
             867
 
-      - uses: ddradar/choose-random-action@v1
+      - uses: ddradar/choose-random-action@v2.0.2
         id: pick_easy
         with:
           contents: |
@@ -49,21 +49,21 @@ jobs:
             979
       
       - name: Create Issue From File (Diff)
-        uses: peter-evans/create-issue-from-file@v2.3.2
+        uses: peter-evans/create-issue-from-file@v4.0.1
         with:
           title: Ticket nr. ${{ steps.pick_diff.outputs.selected }}
           content-filepath: ./.issues/diff/issue${{ steps.pick_diff.outputs.selected }}.md
           labels: difficult
 
       - name: Create Issue From File (Med)
-        uses: peter-evans/create-issue-from-file@v2.3.2
+        uses: peter-evans/create-issue-from-file@v4.0.1
         with:
           title: Ticket nr. ${{ steps.pick_med.outputs.selected }}
           content-filepath: ./.issues/med/issue${{ steps.pick_med.outputs.selected }}.md
           labels: medium
 
       - name: Create Issue From File (Easy)
-        uses: peter-evans/create-issue-from-file@v2.3.2
+        uses: peter-evans/create-issue-from-file@v4.0.1
         with:
           title: Ticket nr. ${{ steps.pick_easy.outputs.selected }}
           content-filepath: ./.issues/easy/issue${{ steps.pick_easy.outputs.selected }}.md
